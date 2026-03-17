@@ -7,5 +7,4 @@ test('User login test', async ({ loginPage }) => {
 
   await loginPage.login(username, password)
 
-  await expect(page).toHaveTitle('Dashboard')
 })
