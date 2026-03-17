@@ -25,7 +25,7 @@ export default defineConfig({
 
     trace: 'on-first-retry',
 
-    headless: false,
+    headless: process.env.CI ? true : false,
 
     screenshot: 'only-on-failure',
 
@@ -33,7 +33,7 @@ export default defineConfig({
 
   },
 
-  reporter: [['html']],
+  reporter: [['html', { open: 'never' }]],
 
   testDir: './tests',
   /* Run tests in files in parallel */
